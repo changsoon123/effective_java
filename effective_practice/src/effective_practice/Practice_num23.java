@@ -6,14 +6,17 @@ public class Practice_num23 {
 
 	public static void main(String[] args) {
 
-		ColorPoint2 p1 = new ColorPoint2(1, 2, Color.Red);
+		ColorPoint2 p1 = new ColorPoint2(1, 2, Color2.Red);
 		Point2 p2 = new Point2(1, 2);
-		ColorPoint2 p3 = new ColorPoint2(1, 2, Color.Blue);
+		ColorPoint2 p3 = new ColorPoint2(1, 2, Color2.Blue);
 	
 	
 		
+
 		System.out.println(p1.equals(p2));
+		
 		System.out.println(p2.equals(p3));
+		
 		System.out.println(p3.equals(p1));
 		
 	}
@@ -37,15 +40,19 @@ class Point2 {
         Point2 p = (Point2) o;
         return p.x == x && p.y == y;
     }
+    
+    
+    
+    
 }
 
 
 class ColorPoint2 {
 	
     private final Point2 point;
-    private final Color color;
+    private final Color2 color;
 
-    public ColorPoint2(int x, int y, Color color) {
+    public ColorPoint2(int x, int y, Color2 color) {
         point = new Point2(x, y);
         this.color = Objects.requireNonNull(color);
     }
@@ -64,4 +71,14 @@ class ColorPoint2 {
         return cp.point.equals(point) && cp.color.equals(color);
         
     }
+    
+    
+}
+
+class Color2 {
+
+	public static Color2 Blue = new Color2();
+	public static Color2 Red = new Color2();
+		
+	
 }
