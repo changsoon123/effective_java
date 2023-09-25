@@ -26,7 +26,7 @@ public class Practice_num23 {
 class Point2 {
     private final int x;
     private final int y;
-s
+
     public Point2(int x, int y) {
         this.x = x;
         this.y = y;
