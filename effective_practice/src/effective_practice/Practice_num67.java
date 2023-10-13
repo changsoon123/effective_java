@@ -15,8 +15,8 @@ public class Practice_num67 {
 		
 	}
 	
-	private static void unsafeAdd(List<Object> list, Object o) {
-		
+	private static void unsafeAdd(List list, Object o) {
+		list.add(o);
 	}
 	
 
