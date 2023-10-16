@@ -19,7 +19,7 @@ public class Practice_num71 {
         practice.elements[1] = "바나나";
         practice.elements[2] = "체리";
 
-        String[] array = practice.toArray(new String[3]);
+        String[] array = practice.toArray(new String[2]);
 
         for (String item : array) {
             System.out.println(item);
@@ -44,6 +44,7 @@ public class Practice_num71 {
 		}
 		
 		System.arraycopy(elements, 0, a, 0, size);
+		
 		if(a.length > size) {
 			a[size] = null;
 		}
