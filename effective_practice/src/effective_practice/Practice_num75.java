@@ -1,5 +1,6 @@
 package effective_practice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.EmptyStackException;
@@ -12,15 +13,30 @@ public class Practice_num75 {
 
 	public static void main(String[] args) {
 
-		Stack<String> stack = new Stack<>();
+		Stack<Number> numberStack = new Stack<>();
 		
-		for(String arg : args)
-			stack.push(arg);
+		Collection<Object> objects = new ArrayList<>();
 		
-		while(!stack.isEmpty())
-			System.out.println(stack.pop().toUpperCase());
+		numberStack.push(42); 
+		numberStack.push(3.14); 
+
+		numberStack.popAll(objects); 
+
+		System.out.println(objects);
 		
 		
+//		Iterable<Integer> integers = Arrays.asList(1, 2, 3, 4, 5);
+//		
+//		numberStack.pushAll(integers);
+		
+		
+//		for(String arg : args)
+//			stack.push(arg);
+//		
+//		while(!stack.isEmpty())
+//			System.out.println(stack.pop().toUpperCase());
+//		
+//		
 	}
 
 }
@@ -57,6 +73,16 @@ class Stack<E> {
     private void ensureCapacity() {
         if (elements.length == size)
             elements = Arrays.copyOf(elements, 2 * size + 1);
+    }
+    
+    public void pushAll(Iterable<? extends E> src) {
+    	for (E e : src)
+    		push(e);
+    }
+    
+    public void popAll(Collection<? super E> dst){
+    	while (!isEmpty())
+    		dst.add(pop());
     }
 }
 
