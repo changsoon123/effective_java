@@ -11,7 +11,7 @@ public class Practice_num74<T> {
 	private final List<T> choiceList;
 	
 
-	public Practice_num74(Collection<T> choices) {
+	public Practice_num74(Collection<? extends T> choices) {
 		choiceList = new ArrayList<>(choices);
 	}
 	
