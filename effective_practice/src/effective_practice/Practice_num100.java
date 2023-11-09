@@ -27,3 +27,23 @@ public class Practice_num100 {
 @interface ExceptionTest {
 	Class<? extends Throwable> value();
 }
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface ExceptionTest2 {
+	Class<? extends Throwable>[] value();
+}
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@Repeatable(ExceptionTestContainer.class)
+@interface ExceptionTest3{
+   Class<? extends Throwable> value();
+}
+
+//컨테이너 애너테이션
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface ExceptionTestContainer {
+		ExceptionTest3[] value();
+}
