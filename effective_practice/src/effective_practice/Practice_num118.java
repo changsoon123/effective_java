@@ -26,7 +26,7 @@ class Anagrams2 {
 		      int minGroupSize = Integer.parseInt(args[1]);
 		      
 		      try (Stream<String> words = Files.lines(dictionary)) {
-		         words.collect(Collectors.groupingBy(word -> alphabetize(word)))
+		         words.collect(Collectors.groupingBy(word -> alphabetize(word), Collectors.toSet()))
 		            .values().stream()
 		            .filter(group -> group.size() >= minGroupSize)
 		            .forEach(g -> System.out.println(g.size() + ": " + g));
